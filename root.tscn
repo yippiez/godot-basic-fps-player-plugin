@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2ap1tpu73nci"]
+
+[ext_resource type="Script" path="res://fps_player.gd" id="1_vtk6a"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wqw6k"]
+
+[node name="Root" type="Node"]
+
+[node name="FPSPlayer" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.86551, 0)
+script = ExtResource("1_vtk6a")
+speed = 3.0
+jump_velocity = 3.0
+sensivity = 0.005
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="FPSPlayer"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FPSPlayer"]
+shape = SubResource("SphereShape3D_wqw6k")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(3.0271, 0.157959, 3.24414)
